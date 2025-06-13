@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <!-- Expense Form -->
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount ($)" required>
+            <input type="date" id="expense-date" required>
+            <select id="expense-category">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <!-- Budget and Savings -->
+        <input type="number" id="budget-limit" placeholder="Set Monthly Budget ($)">
+        <button id="set-budget-btn">Set Budget</button>
+        <p id="budget-warning"></p>
+
+        <input type="number" id="saving-goal" placeholder="Enter savings goal ($)">
+        <button id="set-goal-btn">Set Goal</button>
+        <p id="goal-status"></p>
+
+        <!-- Expense Filters -->
+        <select id="filter-category">
+            <option value="All">All</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+        </select>
+        <button id="filter-btn">Filter</button>
+
+        <label>Filter by Date:</label>
+        <input type="date" id="start-date">
+        <input type="date" id="end-date">
+        <button id="filter-date-btn">Filter by Date</button>
+
+        <select id="sort-expenses">
+            <option value="asc">Sort by Amount (Low → High)</option>
+            <option value="desc">Sort by Amount (High → Low)</option>
+        </select>
+        <button id="sort-btn">Sort</button>
+
+        <h2>Expenses</h2>
+        <ul id="expense-list"></ul>
+        <h3>Total: $<span id="total-expense">0</span></h3>
+
+        <!-- Insights Section -->
+        <div class="section">
+            <h3>Monthly Breakdown</h3>
+            <ul id="monthly-breakdown"></ul>
+
+            <h3>AI Budget Assistant</h3>
+            <p id="budget-advice"></p>
+
+            <h3>Future Expense Prediction</h3>
+            <p id="expense-prediction"></p>
+
+            <h3>Spending Streaks</h3>
+            <p id="streak-status"></p>
+        </div>
+
+        <!-- Charts -->
+        <canvas id="expenseChart"></canvas>
+        <canvas id="expenseTrendChart"></canvas>
+        <canvas id="budgetTrendChart"></canvas>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
